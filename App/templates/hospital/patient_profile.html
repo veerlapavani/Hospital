@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Patient Profile</h2>
+    <div class="card shadow-lg p-4">
+        <p><strong>Username:</strong> {{ patient.user.username }}</p>
+        <p><strong>Age:</strong> {{ patient.age }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender }}</p>
+        <p><strong>Phone:</strong> {{ patient.phone }}</p>
+    </div>
+</div>
+{% endblock %}

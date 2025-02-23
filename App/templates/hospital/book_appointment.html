@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Book an Appointment</h2>
+    <div class="card shadow-lg p-4">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="doctor">Select Doctor:</label>
+                {{ form.doctor }}
+            </div>
+            <div class="mb-3">
+                <label for="date">Select Date & Time:</label>
+                {{ form.date }}
+            </div>
+            <button class="btn btn-success w-100" type="submit">Confirm Appointment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5 pt-5">
+        <div class="col-md-8">
+            <div class="search-container">
+                <h2>Welcome to the Dashboard</h2>
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="query" placeholder="Enter search query..." required>
+                        <button class="btn" type="submit">
+                            <i class="material-icons">search</i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% if results %}
+        <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+                <h3 class="text-center">Search Results:</h3>
+                <ul class="list-group">
+                    {% for result in results %}
+                        <li class="list-group-item">{{ result }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
